@@ -1,16 +1,8 @@
-import express from 'express';
-import Question from '../models/Question.js';
-
+import express from "express";
+import { getAllQuestions } from "../controller/userController.js";
+import { protect } from "../middleware/authMiddleware.js";
 const router = express.Router();
 
-// GET: all questions (limit 10)
-router.get('/', async (req, res) => {
-    console.log(1111);
-    
-  const questions = await Question.find().limit(10)
-  console.log(1122,questions);
-  
-  res.json(questions);
-});
+router.get("/", protect, getAllQuestions);
 
 export default router;
