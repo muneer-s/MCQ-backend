@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// Routes 
+// routes 
 app.use('/api/user', userRouter);
 app.use('/api/questions', questionRoutes);
 app.use('/api/submit', submitRoutes);
