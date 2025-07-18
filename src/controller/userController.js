@@ -102,7 +102,7 @@ export const submitAnswers = async (req, res) => {
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    const { answers, feedback } = req.body;
+    const { answers } = req.body;
 
     let score = 0;
     const detailedAnswers = [];
@@ -123,7 +123,6 @@ export const submitAnswers = async (req, res) => {
       userId: decoded.id,
       score,
       answers: detailedAnswers,
-      feedback,
     });
 
     console.log(12, result);

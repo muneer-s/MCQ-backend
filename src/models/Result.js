@@ -9,8 +9,7 @@ const resultSchema = new mongoose.Schema({
       selected: String,
       correct: Boolean,
     },
-  ],
-  feedback: String,
+  ]
 });
 
 export default mongoose.model('Result', resultSchema);
